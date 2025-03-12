@@ -51,6 +51,7 @@
             />
 
             <side-bar-single-menu :icon="`fa fa-plus`" :menu_title="`TestOne`"  :route_name="`AllTestOne`" />
+<side-bar-single-menu :icon="`fa fa-plus`" :menu_title="`TestTwo`"  :route_name="`AllTestTwo`" />
 <!-- Management end -->
         </ul>
     </div>
