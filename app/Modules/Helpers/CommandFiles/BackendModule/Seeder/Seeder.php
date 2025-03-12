@@ -8,7 +8,7 @@ if (!function_exists('Seeder')) {
         $targetClass = null;
         $formated_module = explode('/', $moduleName);
         if (count($formated_module) > 1) {
-            $moduleName = implode('/', $formated_module);
+            $moduleName = implode('\\', $formated_module);
             $targetClass = $moduleName;
             $moduleName = Str::replace("/", "\\", $moduleName);
         } else {

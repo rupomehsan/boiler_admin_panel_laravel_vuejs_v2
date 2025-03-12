@@ -44,6 +44,11 @@
                 </router-link>
             </li>
             <!-- Management start -->
+            <side-bar-single-menu
+                :icon="`fa fa-plus`"
+                :menu_title="`User`"
+                :route_name="`AllUser`"
+            />
 
             <side-bar-single-menu :icon="`fa fa-plus`" :menu_title="`TestOne`"  :route_name="`AllTestOne`" />
 <!-- Management end -->

@@ -244,7 +244,7 @@ class ModelingDirectory extends Command
             $SeederDirectory = $ViewModuleName;
             $formated_module = explode('/', $SeederDirectory);
             if (count($formated_module) > 1) {
-                $SeederDirectory = implode('/', $formated_module);
+                $SeederDirectory = implode('\\', $formated_module);
                 $SeederDirectory = Str::replace("/", "/", $SeederDirectory);
             } else {
                 $SeederDirectory = Str::replace("/", "/", $SeederDirectory);
