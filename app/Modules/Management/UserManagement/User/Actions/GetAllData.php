@@ -15,8 +15,10 @@ class GetAllData
             $orderByType = request()->input('sort_type') ?? 'desc';
             $status = request()->input('status') ?? 'active';
             $fields = request()->input('fields') ?? '*';
+           
             $start_date = request()->input('start_date');
             $end_date = request()->input('end_date');
+
             $with = [];
             $condition = [];
 
@@ -25,15 +27,15 @@ class GetAllData
             if (request()->has('search') && request()->input('search')) {
                 $searchKey = request()->input('search');
                 $data = $data->where(function ($q) use ($searchKey) {
-    $q->where('name', 'like', '%' . $searchKey . '%');    
+                    $q->where('name', 'like', '%' . $searchKey . '%');    
 
-    $q->orWhere('email', 'like', '%' . $searchKey . '%');    
+                    $q->orWhere('email', 'like', '%' . $searchKey . '%');    
 
-    $q->orWhere('password', 'like', '%' . $searchKey . '%');    
+                    $q->orWhere('password', 'like', '%' . $searchKey . '%');    
 
-    $q->orWhere('image', 'like', '%' . $searchKey . '%');    
+                    $q->orWhere('image', 'like', '%' . $searchKey . '%');    
 
-    $q->orWhere('role_id', 'like', '%' . $searchKey . '%');              
+                    $q->orWhere('role_id', 'like', '%' . $searchKey . '%');              
 
                 });
             }
@@ -49,6 +51,7 @@ class GetAllData
             if ($status == 'trased') {
                 $data = $data->trased();
             }
+
 
             if (request()->has('get_all') && (int)request()->input('get_all') === 1) {
                 $data = $data
@@ -75,6 +78,8 @@ class GetAllData
                     ->orderBy($orderByColumn, $orderByType)
                     ->paginate($pageLimit);
             }
+
+
 
             return entityResponse([
                 ...$data->toArray(),

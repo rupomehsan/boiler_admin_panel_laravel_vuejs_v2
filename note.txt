@@ -1,0 +1,9 @@
+1-> git clone https://github.com/rupomehsan/boiler_admin_panel_laravel_vuejs_v2.git
+2-> composer install -> if any problems composer update
+3-> npm install
+4->  .example.copy rename .env
+5-> database create kora
+6-> npm run reload
+7-> php artisan serve
+8-> npm run dev
+
